@@ -26,8 +26,16 @@ public class FavoriteResponse {
         this.id = favorite.getId();
         Station source = favorite.getSource();
         this.source = new StationResponse(source.getId(), source.getName());
-
         Station target = favorite.getTarget();
         this.target = new StationResponse(target.getId(), target.getName());
+    }
+
+    @Override
+    public String toString() {
+        return "FavoriteResponse{" +
+                "id=" + id +
+                ", source=" + source +
+                ", target=" + target +
+                '}';
     }
 }

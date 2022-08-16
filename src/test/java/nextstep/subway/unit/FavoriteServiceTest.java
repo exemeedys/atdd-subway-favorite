@@ -113,6 +113,7 @@ public class FavoriteServiceTest {
 
         //given
         LoginMember loginMember = createLoginMember();
+
         favoriteService.registerFavorite(loginMember, createFavoriteRequestParams(교대역.getId(), 양재역.getId()));
         favoriteService.registerFavorite(loginMember, createFavoriteRequestParams(남부터미널역.getId(), 양재역.getId()));
 
@@ -120,6 +121,7 @@ public class FavoriteServiceTest {
         List<FavoriteResponse> favorites = favoriteService.getFavorites(loginMember);
 
         //then
+        System.out.println("favorites : " + favorites);
         assertThat(favorites.size()).isEqualTo(2);
         assertThat(favorites.stream().map(FavoriteResponse::getSource).map(StationResponse::getName).collect(toList()))
                 .containsExactly("교대역", "남부터미널역");

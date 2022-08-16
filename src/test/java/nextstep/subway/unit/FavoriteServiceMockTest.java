@@ -115,7 +115,7 @@ public class FavoriteServiceMockTest {
         ReflectionTestUtils.setField(두번째_즐겨찾기, "id", 2L);
 
         when(memberService.findByEmail(any())).thenReturn(member);
-        when(favoriteRepository.findByMemberId(member.getId())).thenReturn(Arrays.asList(첫번째_즐겨찾기, 두번째_즐겨찾기));
+//        when(favoriteRepository.findByMemberId(member.getId())).thenReturn(Arrays.asList(첫번째_즐겨찾기, 두번째_즐겨찾기));
 
         // when
         List<FavoriteResponse> favorites = favoriteService.getFavorites(createLoginMember());

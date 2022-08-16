@@ -50,5 +50,13 @@ public class Favorite {
         return target;
     }
 
-
+    @Override
+    public String toString() {
+        return "Favorite{" +
+                "id=" + id +
+                ", source=" + source +
+                ", target=" + target +
+                ", member=" + member +
+                '}';
+    }
 }

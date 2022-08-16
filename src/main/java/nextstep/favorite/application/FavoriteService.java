@@ -42,7 +42,9 @@ public class FavoriteService {
 
     public List<FavoriteResponse> getFavorites(LoginMember loginMember) {
         Member member = memberService.findByEmail(loginMember.getPrincipal());
-        return favoriteRepository.findByMemberId(member.getId()).stream()
+        List<Favorite> favorites = member.getFavorites();
+        System.out.println("favorites.size() : " + favorites.size());
+        return favorites.stream()
                 .map(FavoriteResponse::new)
                 .collect(Collectors.toList());
     }
